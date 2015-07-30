@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="puncher" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +15,39 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWq-gO-4TY">
+                                <rect key="frame" x="251" y="443" width="99" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Ser-Rp-MFS"/>
+                                    <constraint firstAttribute="width" constant="99" id="YfG-5g-AJw"/>
+                                </constraints>
+                                <state key="normal" title="punch">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendEmailButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ddo-yo-Xaz"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="jxb-7N-VtG">
+                                <rect key="frame" x="0.0" y="102" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="459907930.33013099">
+                                    <!--2015-07-30 00:12:10 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fWq-gO-4TY" secondAttribute="bottom" constant="105" id="CF9-O4-AVA"/>
+                            <constraint firstAttribute="trailing" secondItem="jxb-7N-VtG" secondAttribute="trailing" id="VB1-qj-XU9"/>
+                            <constraint firstItem="jxb-7N-VtG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="82" id="dwi-zm-ZvX"/>
+                            <constraint firstItem="jxb-7N-VtG" firstAttribute="centerX" secondItem="fWq-gO-4TY" secondAttribute="centerX" id="fBi-cw-L7y"/>
+                            <constraint firstItem="jxb-7N-VtG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="oKX-2B-bKL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateTimeSelect" destination="jxb-7N-VtG" id="Wbk-XW-22P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
